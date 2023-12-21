@@ -6,6 +6,7 @@ class Event {
   late dynamic attachment;
   late dynamic action;
   late dynamic direction;
+  late dynamic object;
   String? mode;
 
   Event(Map<String, dynamic> json) {
@@ -14,6 +15,7 @@ class Event {
     attachment = json["attachment"];
     action = json["action"];
     direction = json["direction"];
+    object = json["object"];
     mode = json["mode"];
   }
 }
