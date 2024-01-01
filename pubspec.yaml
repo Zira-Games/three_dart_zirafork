@@ -4,7 +4,8 @@ version: 0.0.16
 homepage: https://github.com/wasabia/three_dart
 
 environment:
-  sdk: ">=2.12.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.16.0"
 
 dependencies:
   flutter:
@@ -30,9 +31,7 @@ dependencies:
 
 dependency_overrides:
   three_dart_jsm:
-    path: ../three_dart_jsm
-  flutter_gl:
-    path: ../flutter_gl/flutter_gl
+    path: ../three_dart_jsm_zirafork
 
 dev_dependencies:
   flutter_test:
