@@ -123,7 +123,7 @@ class Sprite extends Object3D {
 
 void transformVertex(vertexPosition, Vector3 mvPosition, Vector2 center, scale, double? sin, double? cos) {
   // compute position in camera space
-  _alignedPosition.subVectors(vertexPosition, center).addScalar(0.5).multiply(scale);
+  _alignedPosition.subVectors(Vector2(vertexPosition.x, vertexPosition.y), center).addScalar(0.5).multiply(Vector2(scale.x, scale.y));
 
   // to check if rotation is not zero
   if (sin != null && cos != null) {

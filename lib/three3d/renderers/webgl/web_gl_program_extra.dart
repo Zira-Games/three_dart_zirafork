@@ -4,7 +4,7 @@ import 'package:three_dart/three3d/renderers/shaders/index.dart';
 import 'package:three_dart/three3d/renderers/webgl/web_gl_parameters.dart';
 import 'package:three_dart/three3d/renderers/webgl/web_gl_shader.dart';
 
-class WebGLProgramExtra {
+mixin WebGLProgramExtra {
   handleSource(String string, int errorLine) {
     var lines = string.split('\n');
     var lines2 = [];

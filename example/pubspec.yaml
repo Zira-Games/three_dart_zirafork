@@ -35,8 +35,8 @@ dependencies:
 dependency_overrides:
   three_dart:
     path: ../
-  # three_dart_jsm:
-  #   path: ../../three_dart_jsm
+  three_dart_jsm:
+    path: ../../three_dart_jsm_zirafork
   # flutter_gl:
   #   path: ../../flutter_gl/flutter_gl
 

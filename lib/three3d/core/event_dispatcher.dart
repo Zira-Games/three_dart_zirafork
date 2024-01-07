@@ -1,4 +1,5 @@
 /// https://github.com/mrdoob/eventdispatcher.js/
+import 'package:three_dart_jsm/three_dart_jsm/controls/index.dart';
 
 class Event {
   late String? type;
@@ -7,6 +8,7 @@ class Event {
   late dynamic action;
   late dynamic direction;
   late dynamic object;
+  late dynamic details;
   String? mode;
 
   Event(Map<String, dynamic> json) {
@@ -16,6 +18,7 @@ class Event {
     action = json["action"];
     direction = json["direction"];
     object = json["object"];
+    details = json["details"];
     mode = json["mode"];
   }
 }
@@ -23,7 +26,7 @@ class Event {
 mixin EventDispatcher {
   Map<String, List<Function>>? _listeners = {};
 
-  void addEventListener(String type, Function listener) {
+  void addEventListener(String type, void Function(Event event) listener) {
     _listeners ??= {};
 
     Map<String, List<Function>> listeners = _listeners!;
@@ -65,8 +68,6 @@ mixin EventDispatcher {
 
     var listeners = _listeners!;
     var listenerArray = listeners[event.type];
-
-    // print("dispatchEvent event: ${event.type} ");
 
     if (listenerArray != null) {
       event.target = this;
